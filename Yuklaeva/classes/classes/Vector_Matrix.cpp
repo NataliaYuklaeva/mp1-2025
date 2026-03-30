@@ -1,4 +1,5 @@
-#include <iostream>
+//если перегружаю сиаут = убираю принт
+/*#include <iostream>
 #include <vector>
 #include <random>
 #include <ctime>
@@ -11,11 +12,11 @@ private:
 
 public:
     //  онструктор по умолчанию
-    Vector() : size(0), data(nullptr) {}
+    Vector() : size(1), data(0) {}
 
     //  онструктор с заданным размером (инициализаци€ нул€ми)
     explicit Vector(int n) : size(n) {
-        data = new double[size]();
+        data = new double[size];
     }
 
     //  онструктор копировани€
@@ -50,13 +51,8 @@ public:
 
     // ќператор присваивани€ перемещением
     Vector& operator=(Vector&& other) noexcept {
-        if (this != &other) {
-            delete[] data;
-            size = other.size;
-            data = other.data;
-            other.size = 0;
-            other.data = nullptr;
-        }
+        std::swap(size, other.size);
+        std::swap(data, other.data);
         return *this;
     }
 
@@ -83,13 +79,13 @@ private:
 
 public:
     //  онструктор по умолчанию
-    Matrix() : rows(0), cols(0), data(nullptr) {}
+    Matrix() : rows(1), cols(1), data(0) {}
 
     //  онструктор с заданным размером (инициализаци€ нул€ми)
     Matrix(int r, int c) : rows(r), cols(c) {
         data = new double* [rows];
         for (int i = 0; i < rows; ++i) {
-            data[i] = new double[cols]();
+            data[i] = new double[cols];
         }
     }
 
@@ -138,19 +134,7 @@ public:
 
     // ќператор присваивани€ перемещением
     Matrix& operator=(Matrix&& other) noexcept {
-        if (this != &other) {
-            for (int i = 0; i < rows; ++i)
-                delete[] data[i];
-            delete[] data;
-
-            rows = other.rows;
-            cols = other.cols;
-            data = other.data;
-
-            other.rows = 0;
-            other.cols = 0;
-            other.data = nullptr;
-        }
+        std::swap(rows, other.rows);
         return *this;
     }
 
@@ -194,4 +178,4 @@ int main() {
     m1.print();
 
     return 0;
-}
+}*/

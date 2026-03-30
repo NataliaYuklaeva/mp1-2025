@@ -123,8 +123,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="functions.cpp" />
     <ClCompile Include="kartoteka.cpp" />
+    <ClCompile Include="main_for_Vector_Matrix.cpp" />
     <ClCompile Include="Vector_Matrix.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="class_Vector_Matrix.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
