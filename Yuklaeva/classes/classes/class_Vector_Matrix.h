@@ -15,12 +15,14 @@ public:
     Vector(size_t n);
     Vector(size_t n, double value);
     Vector(const Vector& other);  // Copy constructor
+    Vector(Vector&& other) noexcept;
 
     // Destructor
     ~Vector();
 
     // Assignment operator
     Vector& operator=(const Vector& other);
+    Vector& operator=(Vector&& other) noexcept;  // Move assignment
 
     // Element access
     double& operator[](size_t index);
@@ -67,12 +69,14 @@ public:
     Matrix(size_t m, size_t n);
     Matrix(size_t m, size_t n, double value);
     Matrix(const Matrix& other);  // Copy constructor
+    Matrix(Matrix&& other) noexcept;  // Move constructor
 
     // Destructor
     ~Matrix();
 
     // Assignment operator
     Matrix& operator=(const Matrix& other);
+    Matrix& operator=(Matrix&& other) noexcept;  // Move assignment
 
     // Element access
     Vector& operator[](size_t index);

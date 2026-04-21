@@ -1,10 +1,11 @@
-#include "class_Vector_Matrix.h"
+/*#include "class_Vector_Matrix.h"
 #include <iostream>
 #include <random>
 #include <locale>
 
 int main() {
     std::setlocale(LC_ALL, "Russian");
+
     // Инициализация генератора случайных чисел
     std::random_device rd;
     std::mt19937 rng(rd());
@@ -43,6 +44,29 @@ int main() {
 
     // Тест оператора сравнения
     std::cout << "v1 == v2? " << (v1 == v2 ? "true" : "false") << std::endl;
+
+    // ТЕСТЫ СЕМАНТИКИ ПЕРЕМЕЩЕНИЯ ДЛЯ ВЕКТОРОВ
+        std::cout << "\n=== ТЕСТЫ ПЕРЕМЕЩЕНИЯ ДЛЯ ВЕКТОРОВ ===" << std::endl;
+
+    Vector v6(5, 3.14);
+    std::cout << "v6 (исходный): " << v6 << std::endl;
+    std::cout << "Размер v6: " << v6.getSize() << std::endl;
+
+    // Тест конструктора перемещения
+    Vector v7 = std::move(v6);
+    std::cout << "v7 (после перемещения из v6): " << v7 << std::endl;
+    std::cout << "Размер v6 после перемещения: " << v6.getSize() << std::endl;
+    std::cout << "v6 (должен быть пустым): " << v6 << std::endl;
+
+    // Тест перемещающего присваивания
+    Vector v8(3, 1.0);
+    Vector v9(4, 2.0);
+    std::cout << "\nv8 до перемещения: " << v8 << std::endl;
+    std::cout << "v9 до перемещения: " << v9 << std::endl;
+
+    v8 = std::move(v9);
+    std::cout << "v8 после перемещения из v9: " << v8 << std::endl;
+    std::cout << "v9 после перемещения: " << v9 << std::endl;
 
     std::cout << "\n=== ТЕСТЫ МАТРИЦ ===" << std::endl;
 
@@ -113,5 +137,31 @@ int main() {
     Matrix m10(3, 4, 5.0);
     std::cout << "m9 == m10? " << (m9 == m10 ? "true" : "false") << std::endl;
 
+    // ТЕСТЫ СЕМАНТИКИ ПЕРЕМЕЩЕНИЯ ДЛЯ МАТРИЦ
+    std::cout << "\n=== ТЕСТЫ ПЕРЕМЕЩЕНИЯ ДЛЯ МАТРИЦ ===" << std::endl;
+
+    Matrix m11(2, 2, 7.77);
+    std::cout << "m11 (исходная):" << std::endl;
+    std::cout << m11 << std::endl;
+
+    // Тест конструктора перемещения для матрицы
+    Matrix m12 = std::move(m11);
+    std::cout << "m12 (после перемещения из m11):" << std::endl;
+    std::cout << m12 << std::endl;
+    std::cout << "Размеры m11 после перемещения: " << m11.getRows() << "x" << m11.getCols() << std::endl;
+
+    // Тест перемещающего присваивания для матрицы
+    Matrix m13(3, 3, 1.0);
+    Matrix m14(2, 2, 2.0);
+    std::cout << "\nm13 до перемещения:" << std::endl;
+    std::cout << m13 << std::endl;
+    std::cout << "m14 до перемещения:" << std::endl;
+    std::cout << m14 << std::endl;
+
+    m13 = std::move(m14);
+    std::cout << "m13 после перемещения из m14:" << std::endl;
+    std::cout << m13 << std::endl;
+    std::cout << "Размеры m14 после перемещения: " << m14.getRows() << "x" << m14.getCols() << std::endl;
+
     return 0;
-}
+}*/

@@ -29,6 +29,11 @@ Vector::Vector(const Vector& other) : size(other.size) {
     }
 }
 
+Vector::Vector(Vector&& other) noexcept : data(other.data), size(other.size) {
+    other.data = nullptr;
+    other.size = 0;
+}
+
 // Деструктор
 Vector::~Vector() {
     delete[] data;
@@ -43,6 +48,17 @@ Vector& Vector::operator=(const Vector& other) {
         for (size_t i = 0; i < size; ++i) {
             data[i] = other.data[i];
         }
+    }
+    return *this;
+}
+
+Vector& Vector::operator=(Vector&& other) noexcept {
+    if (this != &other) {
+        delete[] data;
+        data = other.data;
+        size = other.size;
+        other.data = nullptr;
+        other.size = 0;
     }
     return *this;
 }
@@ -206,6 +222,12 @@ Matrix::Matrix(const Matrix& other) : rowsCount(other.rowsCount), colsCount(othe
     }
 }
 
+Matrix::Matrix(Matrix&& other) noexcept : rows(other.rows), rowsCount(other.rowsCount), colsCount(other.colsCount) {
+    other.rows = nullptr;
+    other.rowsCount = 0;
+    other.colsCount = 0;
+}
+
 // Деструктор
 Matrix::~Matrix() {
     delete[] rows;
@@ -221,6 +243,19 @@ Matrix& Matrix::operator=(const Matrix& other) {
         for (size_t i = 0; i < rowsCount; ++i) {
             rows[i] = other.rows[i];
         }
+    }
+    return *this;
+}
+
+Matrix& Matrix::operator=(Matrix&& other) noexcept {
+    if (this != &other) {
+        delete[] rows;
+        rows = other.rows;
+        rowsCount = other.rowsCount;
+        colsCount = other.colsCount;
+        other.rows = nullptr;
+        other.rowsCount = 0;
+        other.colsCount = 0;
     }
     return *this;
 }
