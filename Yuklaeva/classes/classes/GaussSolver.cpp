@@ -208,10 +208,10 @@ void GaussSolver::printVerification() const {
         << std::setprecision(6) << maxError << std::endl;
 
     if (verifySolution()) {
-        std::cout << "✓ Решение найдено верно!" << std::endl;
+        std::cout << "Решение найдено верно!" << std::endl;
     }
     else {
-        std::cout << "✗ Погрешность превышает допустимую!" << std::endl;
+        std::cout << "Погрешность превышает допустимую!" << std::endl;
     }
 
     std::cout << "Норма невязки: " << std::scientific
