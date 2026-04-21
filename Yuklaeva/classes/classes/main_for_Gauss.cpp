@@ -56,10 +56,10 @@ int main() {
 
         if (choice >= 1 && choice <= 3) {
             cout << "\n--- Решение системы ---" << endl;
-            solver.printSystem();
+           // solver.printSystem();
 
             if (solver.solve()) {
-                solver.printSolution();
+            //    solver.printSolution();
                 solver.printVerification();
             }
             else {

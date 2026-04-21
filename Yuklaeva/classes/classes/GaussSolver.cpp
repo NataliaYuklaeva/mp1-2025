@@ -20,9 +20,10 @@ void GaussSolver::setSystem(const Matrix& matrix, const Vector& vector) {
 
 void GaussSolver::swapRows(size_t row1, size_t row2) {
     if (row1 == row2) return;
-    for (size_t j = 0; j < A.getCols(); ++j) {
-        std::swap(A(row1, j), A(row2, j));
-    }
+    std::swap(A[row1], A[row2]);
+//    for (size_t j = 0; j < A.getCols(); ++j) {
+//        std::swap(A(row1, j), A(row2, j));
+//    }
     std::swap(b(row1), b(row2));
 }
 
@@ -54,18 +55,18 @@ bool GaussSolver::forwardElimination() {
 
         // Нормализация строки i
         double pivot = A(i, i);
-        for (size_t j = i; j < n; ++j) {
-            A(i, j) /= pivot;
-        }
-        b(i) /= pivot;
+        //for (size_t j = i; j < n; ++j) {
+        //    A(i, j) /= pivot;
+        //}
+        //b(i) /= pivot;
 
         // Исключение переменной из остальных строк
         for (size_t k = i + 1; k < n; ++k) {
             double factor = A(k, i);
             for (size_t j = i; j < n; ++j) {
-                A(k, j) -= factor * A(i, j);
+                A(k, j) -= factor / pivot * A(i, j);
             }
-            b(k) -= factor * b(i);
+            b(k) -= factor / pivot * b(i);
         }
     }
 
@@ -81,7 +82,7 @@ void GaussSolver::backwardSubstitution() {
         for (size_t j = i + 1; j < n; ++j) {
             sum += A(i, j) * x(j);
         }
-        x(i) = b(i) - sum;
+        x(i) = (b(i) - sum) / A(i, i);
     }
 }
 
