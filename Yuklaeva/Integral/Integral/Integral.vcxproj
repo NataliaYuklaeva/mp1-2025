@@ -123,7 +123,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Rectungle.h" />
+    <ClInclude Include="Rectangle.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Rectangle.cpp" />
+    <ClCompile Include="Rectangle_main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
