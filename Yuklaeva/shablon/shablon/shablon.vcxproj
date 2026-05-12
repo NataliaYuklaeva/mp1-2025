@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{35aea9dd-beae-480b-93cd-7a2175ca7921}</ProjectGuid>
-    <RootNamespace>aaaa</RootNamespace>
+    <ProjectGuid>{b9446674-2eab-4df5-be9c-61845defb575}</ProjectGuid>
+    <RootNamespace>shablon</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -123,14 +123,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="class_Vector_Matrix.h" />
-    <ClInclude Include="Figures.h" />
-    <ClInclude Include="Game.h" />
+    <ClInclude Include="shablon.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="class_Vector_Matrix.cpp" />
-    <ClCompile Include="Figures.cpp" />
-    <ClCompile Include="main_for_Figures.cpp" />
+    <ClCompile Include="shablon_main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
