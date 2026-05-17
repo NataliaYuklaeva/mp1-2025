@@ -126,7 +126,8 @@
     <ClInclude Include="shablon.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="shablon_main.cpp" />
+    <ClCompile Include="game.h" />
+    <ClCompile Include="main_for_game.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
